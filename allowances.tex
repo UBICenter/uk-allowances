@@ -4,21 +4,25 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[section]{placeins}
 \title{Allowances and Universal Basic Income}
 \author{Nikhil Woodruff}
 
 \begin{document}
     \maketitle
+    \tableofcontents
     \section{Introduction}
-    Allowances are sections of the tax-benefit system which disregard income for the purposes of tax and benefit calculations. They often provide significant tax reliefs and 
+    Allowances are sections of the tax-benefit system which disregard income for the purposes of tax and benefit calculations. Their existence often causes significant amounts of lost revenue, especially in the tax system. In this paper, I estimate the static effects of replacing different allowances with budget-neutral universal basic income schemes, on the income distribution, poverty and other socioeconomic indicators.
+
+    The largest potential sources of funding in this paper for UBI reforms are the Personal Allowance and the National Insurance Primary Threshold/Lower Profits Limit. The Personal Allowance represents a far-reaching tax cut and would provide the most transformative UBI policy if replaced completely. The National Insurance thresholds, for employment and self-employment income respectively, are technically distinct from allowances, due to their independence from higher thresholds. However, they are included in this paper given their similarity as a tax base-widening funding source to the Personal Allowance. After the main Income Tax and National Insurance allowances, there are several other allowances that could be repealed, raising small amounts of revenue and simplifying the tax-benefit system in the process: the Dividend, Property and Trading allowances, and the Universal Credit Work Allowances.
     \section{Personal Allowance}
     The Personal Allowance is an allowance for most UK individuals, deductible from all forms of income for Income Tax. It is the largest and fastest-growing allowance in the tax code, with most of its gains seen during the Coalition government of 2010-2015, currently standing at £12,570 per year. Figure \ref{fig:PA_hist} shows historical levels of Income Tax allowances, in context with the Personal Allowance: only the Blind Person's Allowance has remained such a consistent component of the tax system.
-    \begin{wrapfigure}{i}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_1.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_1.png}
         \caption{Historical allowance levels}
         \label{fig:PA_hist}
-    \end{wrapfigure}
+    \end{figure}
 
     \subsection{Current System}
 
@@ -34,21 +38,21 @@
     
     The Personal Allowance is applicable to the vast majority of UK individuals, but some are excluded by the use of means-testing: individuals with an adjusted net income (taxable income) of over £100,000 begin to see their Personal Allowance phased out at a rate of 50\% as they increase taxable income. This increases tax revenue, but creates a period of higher marginal tax rates for earnings in the region, reaching an effective marginal tax rate of 60\% for the income range between £100,000 and £125,000.
 
-    \begin{wrapfigure}{O}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_2.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_2.png}
         \caption{Marginal tax rate effects of the Personal Allowance}
         \label{fig:PA_mtr_effects}
-    \end{wrapfigure}
+    \end{figure}
     
     The Personal Allowance also reduces marginal tax rates at the lower end of the income spectrum, but the effect is smaller than 20\% as reductions in tax MTRs are partially offset by increases in benefit phaseout. The allowance shortens the region of punitively high effective marginal tax rates caused by benefit withdrawal by this effect, and its synchronisation with the National Insurance Upper Earnings Limit avoids a sharp increase in marginal tax rates shortly for middle-income earners.
 
-    \begin{wrapfigure}{I}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_3.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_3.png}
         \caption{Budget effects of the Personal Allowance}
         \label{fig:PA_budget_effects}
-    \end{wrapfigure}
+    \end{figure}
 
     \paragraph{Budget effects} The gain seen by individuals is maximised in the higher income regions, between £50,000 and £100,000. However, its inclusion in the tax code is disproportionately beneficial in absolute amount to those on higher incomes before the phase-out (due to the fact that it effectively delays the current marginal tax rate schedule, which increases monotonically within the range of the Personal Allowance). As shown by Figure \ref{fig:PA_budget_effects}, absolute financial gain increases with income (before the phase-out).
 
@@ -57,25 +61,7 @@
     Repealing the Personal Allowance raises a significant amount of increased tax revenue, posing the question of how the socio-economic effects of this revenue might differ if distributed as a universal basic income, rather than a tax cut. The details of such a UBI policy are simple: each adult and child citizen of the United Kingdom receives an equal payment: a share of the total available funds (maintaining budget neutrality). UBI payments are not included as income in means-tested benefits, allowing those on low incomes to receive the full benefit of the payment. The static results of such a reform are given in Table \ref{tab:PA_UBI_results}.
     \begin{table}
         \centering
-        \begin{tabular}{llll}
-            \toprule
-                    &        & Absolute & Relative \\
-            Category & Metric &          &          \\
-            \midrule
-            Distributional & Median income (£k) &     1.00 &     2.69 \\
-                    & Gini coefficient &    -1.60 &    -4.10 \\
-            Poverty & Overall rate (pp) &    -4.20 &   -30.93 \\
-                    & Deep poverty rate (pp) &    -1.10 &   -45.34 \\
-                    & Adult poverty rate (pp) &    -3.30 &   -30.06 \\
-                    & Senior poverty rate (pp) &    -0.10 &    -0.36 \\
-                    & Child poverty rate (pp) &   -10.30 &   -53.30 \\
-                    & Poverty gap (£bn) &    -7.20 &   -35.86 \\
-            Fiscal & Tax revenue (£bn) &   105.90 &    46.81 \\
-                    & Benefit spending (£bn) &   105.90 &    55.70 \\
-            Overall & Winners &    52.00 &        - \\
-                    & Losers &    47.70 &        - \\
-            \bottomrule
-            \end{tabular}
+        \input{tables/PA_table.tex}
         \caption{Static effects of a PA-UBI exchange}
         \label{tab:PA_UBI_results}
     \end{table}
@@ -88,12 +74,12 @@
     
     Figure \ref{fig:poverty_rates_hist} shows the trend of poverty rates over the last two decades for context. While trends are decreasing for absolute indicators, this is gradual not always consistent; an exchange of the Personal Allowance for a UBI would outperform the absolute, before housing costs poverty rate reduction for every year in recent history.
 
-    \begin{wrapfigure}{O}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_5.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_5.png}
         \caption{Historical poverty rates}
         \label{fig:poverty_rates_hist}
-    \end{wrapfigure}
+    \end{figure}
     
     Deep poverty is defined as living in a households whose disposable income is less than half of the poverty line. The poverty gap is the sum of the positive shortfalls between households' disposable incomes and their poverty lines - the minimum total funds required to eliminate poverty. This is a more informative measure of the poverty situation of the country, since the poverty rate does not treat separately households just below the poverty line, and those in deep poverty. This reform reduces deep poverty by just over 45\% and the poverty gap by 36\%, a significant reduction.
 
@@ -106,21 +92,21 @@
 
     Defined within Class 1 are Primary (employee-side) and Secondary (employer-side) contributions, in addition to Class 1A and 1B rates, paid by employers on expenses and benefits paid to employees. Thresholds are technically distinct from allowances - reducing an allowance lowers thresholds above it, whereas reducing thresholds do not affect higher thresholds. We still consider the abolition of the lowest NI thresholds in this paper due to their similarity as a tax base-widening mechanism. 
 
-    \begin{wrapfigure}{I}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_6.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_6.png}
         \caption{Historical NI thresholds}
         \label{fig:NI_thresholds}
-    \end{wrapfigure}
+    \end{figure}
 
     Shown in Figures \ref{fig:NI_thresholds} and \ref{fig:NI_rates}, thresholds and rates have broadly risen over time. The fastest rise in thresholds took place during 2011, when the Primary Threshold and Lower Profits Limit were raised by over £1,000 per year. Rises since then have been consistent, with an increase for 2021.
     
-    \begin{wrapfigure}{O}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_7.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_7.png}
         \caption{Historical NI rates}
         \label{fig:NI_rates}
-    \end{wrapfigure}
+    \end{figure}
 
     Rates have largely remained consistent since 2003, with a one-point rise in all rates by the Labour governments during 2003 and 2011, to fund increased health expenditure.
 
@@ -128,47 +114,29 @@
     
     This also makes no assumption about how employer contributions affect employee pay, which would widen the gap further between employment and self-employment tax treatment. Since this paper only considers allowance and threshold reductions to fund UBI expenditure, this treatment difference, which can only be removed by equalising the main rates of National Insurance, is unchanged by the UBI reform.
 
-    \begin{wrapfigure}{I}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_8.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_8.png}
         \caption{NI contributions for the employed and self-employed}
         \label{fig:NI_self_emp_diff}
-    \end{wrapfigure}
+    \end{figure}
 
     \paragraph{Margin effects} The PT/LPL tax reliefs do not change effective marginal tax rates as strongly as the Personal Allowance, due to the fact that National Insurance imposes much lower tax rates than Income Tax. There are, however, some changes for low-income earners, shown in Figure \ref{fig:NI_mtr_effects}: the allowance eliminates effective MTRs at earnings close to zero and transitions individuals off means-tested benefits earlier than without the allowance, due individuals' applicable income for benefit programs being higher with the tax cut caused by the Primary Threshold and Lower Earnings Limit.
 
     \paragraph{Benefit considerations} Unlike Income Tax, National Insurance payment histories affect the payment of benefits such as the State Pension, contribution-based Jobseeker's Allowance or contribution-based Employment and Support Allowance. These programs require individuals to have a record of National Insurance payments, using specific, lower thresholds such as the Lower Earnings Limit (£120/week in 2021): individuals who earn above this threshold qualify for the benefits tied to National Insurance history. Tax reforms that remove these requirements of align the differences between employees and self-employed individuals in their entitlement based on payments are out of the scope of this paper, and therefore no change to this system is modeled.
 
-    \begin{wrapfigure}{O}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_9.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_9.png}
         \caption{Effective marginal tax rate changes from the NI allowances}
         \label{fig:NI_mtr_effects}
-    \end{wrapfigure}
+    \end{figure}
 
     \subsection{UBI Replacement}
 
     \begin{table}
         \centering
-        \begin{tabular}{llll}
-            \toprule
-                    &        & Absolute & Relative \\
-            Category & Metric &          &          \\
-            \midrule
-            Distributional & Median income (£k) &    -0.00 &    -0.06 \\
-                    & Gini coefficient &    -0.60 &    -1.44 \\
-            Poverty & Overall rate (pp) &    -1.40 &   -10.33 \\
-                    & Deep poverty rate (pp) &    -0.50 &   -19.64 \\
-                    & Adult poverty rate (pp) &    -0.80 &    -7.37 \\
-                    & Senior poverty rate (pp) &    -2.00 &   -12.30 \\
-                    & Child poverty rate (pp) &    -2.70 &   -13.88 \\
-                    & Poverty gap (£bn) &    -2.60 &   -13.12 \\
-            Fiscal & Tax revenue (£bn) &    29.10 &    12.87 \\
-                    & Benefit spending (£bn) &    29.10 &    15.31 \\
-            Overall & Winners &    53.30 &        - \\
-                    & Losers &    46.30 &        - \\
-            \bottomrule
-            \end{tabular}
+        \input{tables/NI_results.tex}
         \caption{Static effects of exchanging the PT and LPL for a UBI}
         \label{tab:NI_UBI_effects}
     \end{table}
@@ -182,12 +150,12 @@
 
     \paragraph{Distributional comparison}
 
-    \begin{wrapfigure}{I}{0.6\textwidth}
+    \begin{figure}
         \centering
-        \includegraphics[width=0.6\textwidth]{images/fig_10.png}
+        \includegraphics[width=0.8\textwidth]{images/fig_10.png}
         \caption{Share of the total UBI spending received by each decile}
         \label{fig:PA_NI_distr_comp}
-    \end{wrapfigure}
+    \end{figure}
 
     Both the Personal Allowance and the NI thresholds, exchanged for a UBI, produce progressive reforms. Figure \ref{fig:PA_NI_distr_comp} shows the share of total UBI spending received by the income deciles, making clear that while both are similar for most deciles, the National Insurance-funded UBI reform has a stronger relative impact on the top decile, due to the means testing of the Personal Allowance in the baseline system, limiting the impact of tax rises on individuals within that decile.
 
@@ -199,27 +167,28 @@
 
     \begin{table}[h]
         \centering
-        \begin{tabular}{llllll}
-            \toprule
-                    &        & Dividends & Property & Trading &     UC \\
-            Category & Metric &           &          &         &        \\
-            \midrule
-            Distributional & Median income &      0.11 &     0.02 &   -0.03 &   0.32 \\
-                    & Gini coefficient &     -0.07 &    -0.03 &   -0.03 &  -0.06 \\
-            Poverty & Overall rate &     -0.23 &    -0.11 &    0.10 &   0.71 \\
-                    & Deep poverty rate &     -0.30 &    -0.21 &    0.16 &  -0.67 \\
-                    & Adult poverty rate &     -0.19 &    -0.16 &    0.20 &   2.73 \\
-                    & Senior poverty rate &     -0.38 &    -0.10 &   -0.81 &  -2.03 \\
-                    & Child poverty rate &     -0.20 &    -0.04 &    0.54 &  -0.75 \\
-                    & Poverty gap &     -0.25 &    -0.20 &   -0.16 &  -0.39 \\
-            Fiscal & Tax revenue &      0.45 &     0.15 &    0.26 &   0.00 \\
-                    & Benefit spending &      0.53 &     0.18 &    0.31 &  -0.00 \\
-            Overall & Winners &     79.30 &    95.00 &   88.90 &  90.80 \\
-                    & Losers &     20.20 &     4.50 &   10.60 &   8.70 \\
-            \bottomrule
-            \end{tabular}
+        \input{tables/small_results.tex}
         \caption{Static (relative) effects of small allowance-UBI exchanges}
         \label{tab:small_UBI_results}
     \end{table}
     The estimated results from the abolition of small allowances are mixed, but poverty is reduced slightly by exchanging the Dividend and Property Allowances for a universal basic income, but increased by exchanging the Trading and UC Work Allowances.
+
+    \section{Comparison}
+
+    \begin{table}[h]
+        \centering
+        \input{tables/comp_table_1.tex}
+        \caption{Comparisons of all UBI reforms (summary)}
+        \label{tab:comp_UBI_1}
+    \end{table}
+
+    \begin{table}[h]
+        \centering
+        \input{tables/comp_table_2.tex}
+        \caption{Comparisons of all UBI reforms (efficiency)}
+        \label{tab:comp_UBI_2}
+    \end{table}
+    The allowances considered have significant revenue differences, but adjusting for the UBI expenditure allows for a fair comparison of their efficiency. For this, we define the \emph{poverty gap efficiency} as the reduction in the poverty gap divided by the UBI expenditure - the percentage of the reform's revenue which actually reduces poverty. Tables \ref{tab:comp_UBI_1} and \ref{tab:comp_UBI_2} show the results of each reform on this metric.
+    \section{Conclusion}
+    The budget-neutral reforms considered in this paper would all reduce poverty and inequality, and can be combined with similar effects. The Personal Allowance provides the most significant UBI, but comes at the cost of increased risk to pension-age individuals, due to lower average incomes and the taxability of the State Pension. The National Insurance thresholds present an alternative funding method which can mitigate these effects, as well as providing additional UBI funding for increased levels of state support to individuals. Small allowances can also provide funding, though not all are equally efficient - the Property Allowance is highly efficient at reducing the poverty gap, unlike the Universal Credit Work Allowance.
 \end{document}
