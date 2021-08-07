@@ -4,17 +4,18 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage[section]{placeins}
+\usepackage{placeins}
 \title{Allowances and Universal Basic Income}
 \author{Nikhil Woodruff}
 
 \begin{document}
     \maketitle
-    \tableofcontents
     \section{Introduction}
-    Allowances are sections of the tax-benefit system which disregard income for the purposes of tax and benefit calculations. Their existence often causes significant amounts of lost revenue, especially in the tax system. In this paper, I estimate the static effects of replacing different allowances with budget-neutral universal basic income schemes, on the income distribution, poverty and other socioeconomic indicators.
+    Allowances are sections of the tax-benefit system which disregard income for the purposes of tax and benefit calculations. Their existence often causes significant amounts of lost revenue, especially in the tax system. In this paper, I estimate the static effects of replacing different allowances with budget-neutral universal basic income schemes, on the income distribution, poverty and other socioeconomic indicators. Modelling of reforms to the UK tax-benefit system is carried out using the OpenFisca-UK microsimulation model\footnote{Full model source code is available at https://github.com/PSLmodels/openfisca-uk. The source code for all results, figures and tables is available at https://github.com/ubicenter/allowances.}, using the Family Resources Survey uprated to 2020-21. 
 
-    The largest potential sources of funding in this paper for UBI reforms are the Personal Allowance and the National Insurance Primary Threshold/Lower Profits Limit. The Personal Allowance represents a far-reaching tax cut and would provide the most transformative UBI policy if replaced completely. The National Insurance thresholds, for employment and self-employment income respectively, are technically distinct from allowances, due to their independence from higher thresholds. However, they are included in this paper given their similarity as a tax base-widening funding source to the Personal Allowance. After the main Income Tax and National Insurance allowances, there are several other allowances that could be repealed, raising small amounts of revenue and simplifying the tax-benefit system in the process: the Dividend, Property and Trading allowances, and the Universal Credit Work Allowances.
+    The largest potential sources of funding in this paper for UBI reforms are the Personal Allowance and the National Insurance Primary Threshold/Lower Profits Limit. The Personal Allowance represents a far-reaching tax cut and would provide the most transformative UBI policy if replaced completely. The National Insurance thresholds, for employment and self-employment income respectively, are technically distinct from allowances, due to their independence from higher thresholds. However, they are included in this paper given their similarity as a tax base-widening funding source to the Personal Allowance. 
+    
+    After the main Income Tax and National Insurance allowances, there are several other allowances that could be repealed, raising small amounts of revenue and simplifying the tax-benefit system in the process: the Dividend, Property and Trading allowances, and the Universal Credit Work Allowances.
     \section{Personal Allowance}
     The Personal Allowance is an allowance for most UK individuals, deductible from all forms of income for Income Tax. It is the largest and fastest-growing allowance in the tax code, with most of its gains seen during the Coalition government of 2010-2015, currently standing at £12,570 per year. Figure \ref{fig:PA_hist} shows historical levels of Income Tax allowances, in context with the Personal Allowance: only the Blind Person's Allowance has remained such a consistent component of the tax system.
     \begin{figure}
@@ -28,13 +29,11 @@
 
     \paragraph{Effects on income}
 
-    From its effect on taxable income, the Personal Allowance significantly decreases Income Tax revenue. Using the OpenFisca-UK microsimulation model, I estimate that the reduction in Income Tax revenue caused by the allowance was approximately £105.9bn in 2020. 
-    
-    However, this does not equal the net revenue raised by its abolition - the Personal Allowance, by increasing post-tax income, reduces necessary welfare spending. For example, for each £1 increase in post-tax income for an individual on the Universal Credit taper, the benefit amount is decreased by 63p. 
+    From its effect on taxable income, the Personal Allowance significantly decreases Income Tax revenue. Using the OpenFisca-UK microsimulation model, I estimate that the reduction in Income Tax revenue caused by the allowance was approximately £105.9bn in 2020. However, this does not equal the net revenue raised by its abolition - the Personal Allowance, by increasing post-tax income, reduces necessary welfare spending. For example, for each £1 increase in post-tax income for an individual on the Universal Credit taper, the benefit amount is decreased by 63p. 
     
     Conversely, decreasing the individual's post-tax income by reducing the Personal Allowance would necessitate increases in total government spending on means-tested welfare benefits. I estimate that, after taking increases in benefit spending into account, the total revenue raised by the abolition of the Personal Allowance per year would be £98.3bn.
     
-    \paragraph{Margin effects} Figure \ref{fig:PA_mtr_effects} shows the changing effective marginal tax rate (the percentage of an extra £1 of income which would not income an individual's disposable income after taxes and benefits) over the income spectrum for a hypothetical individual\footnote{For this example, we assume the individual claims all benefits to which they are eligible and pays all taxes for which they are liable.}. 
+    \paragraph{Margin effects} Figure \ref{fig:PA_mtr_effects} shows the changing effective marginal tax rate (the percentage of an extra £1 of income which would not income an individual's disposable income after taxes and benefits) over the income spectrum for a hypothetical individual\footnote{For this example, we assume the individual claims all benefits to which they are eligible and pays all taxes for which they are liable.}. Achieving budget neutrality for basic income reforms often requires not only higher effective marginal tax rates for individuals, but higher effective participation rates - measuring the tax incentives against taking on employment.\cite{work_incentives}
     
     The Personal Allowance is applicable to the vast majority of UK individuals, but some are excluded by the use of means-testing: individuals with an adjusted net income (taxable income) of over £100,000 begin to see their Personal Allowance phased out at a rate of 50\% as they increase taxable income. This increases tax revenue, but creates a period of higher marginal tax rates for earnings in the region, reaching an effective marginal tax rate of 60\% for the income range between £100,000 and £125,000.
 
@@ -54,11 +53,11 @@
         \label{fig:PA_budget_effects}
     \end{figure}
 
-    \paragraph{Budget effects} The gain seen by individuals is maximised in the higher income regions, between £50,000 and £100,000. However, its inclusion in the tax code is disproportionately beneficial in absolute amount to those on higher incomes before the phase-out (due to the fact that it effectively delays the current marginal tax rate schedule, which increases monotonically within the range of the Personal Allowance). As shown by Figure \ref{fig:PA_budget_effects}, absolute financial gain increases with income (before the phase-out).
+    \paragraph{Budget effects} The gain seen by individuals is maximised in the higher income regions, between £50,000 and £100,000. However, its inclusion in the tax code is disproportionately beneficial in absolute amount to those on higher incomes before the phase-out (due to the fact that it effectively delays the current marginal tax rate schedule, which increases monotonically within the range of the Personal Allowance). Changes to the Personal Allowance since 2010 have benefited higher-income households more in both percentage and absolute terms.\cite{sterling_arnold} As shown by Figure \ref{fig:PA_budget_effects}, absolute financial gain increases with income (before the phase-out). 
 
     \subsection{UBI Replacement}
 
-    Repealing the Personal Allowance raises a significant amount of increased tax revenue, posing the question of how the socio-economic effects of this revenue might differ if distributed as a universal basic income, rather than a tax cut. The details of such a UBI policy are simple: each adult and child citizen of the United Kingdom receives an equal payment: a share of the total available funds (maintaining budget neutrality). UBI payments are not included as income in means-tested benefits, allowing those on low incomes to receive the full benefit of the payment. The static results of such a reform are given in Table \ref{tab:PA_UBI_results}.
+    Repealing the Personal Allowance raises a significant amount of increased tax revenue, posing the question of how the socio-economic effects of this revenue might differ if distributed as a universal basic income, rather than a tax cut. The details of such a UBI policy are simple: each adult and child citizen of the United Kingdom receives an equal payment: a share of the total available funds (maintaining budget neutrality). UBI payments are not included as income in means-tested benefits, allowing those on low incomes to receive the full benefit of the payment. Furthermore, including children in the payments from abolition of the Personal Allowance increases the antipoverty effects of the reform by effectively targeting families under the poverty line.\cite{ines} The static results of such a reform are given in Table \ref{tab:PA_UBI_results}.
     \begin{table}
         \centering
         \input{tables/PA_table.tex}
@@ -161,9 +160,22 @@
 
     \section{Smaller Allowances}
 
+    \subsection{Current System}
+
     While the Personal Allowance and the National Insurance thresholds are the largest potential sources of funds for a universal basic income, there are other elements of the tax-benefit system that could yield funding, and simplify the system in the process. These include the Dividend Allowance, Property Allowance, Trading Allowance, and Universal Credit Work Allowances. The Dividend Allowance allows individuals to disregard up to £2,000 of taxable income to reduce their tax liability. Previously at £5,000, it was reduced in 2017 (see Figure \ref{fig:PA_hist}). The Property Allowance applies to rental income of land or property, and currently stands at £1,000 per year. The Trading Allowance currently stands at £1,000 per year, and is deductible in place of deductions for expenses from self-employment or other trading income.
 
-    The Universal Credit Work Allowance is an allowance for earned income which does not cause benefit reductions at the Universal Credit phase-out rate of 63\%. This varies by whether the family receives housing costs aid in their benefit payments. The current amounts are £293 with housing costs aid and £515 without. Table \ref{tab:small_UBI_results} shows the relative static effects of the exchange of each allowance with a UBI.
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/fig_11.png}
+        \caption{Change to marginal tax rates caused by lowering benefit phase-out thresholds}
+        \label{fig:benefit_mtr_changes}
+    \end{figure}
+
+    The Work Allowances are disregards for earned income in benefit payment calculations, delaying benefit phase-outs beyond the allowances. We model the effects of removing the Universal Credit (UC) Work Allowance and the Tax Credit income thresholds. The UC Work Allowance varies by whether the family receives housing costs aid in their benefit payments. The current amounts are £3516 per year with housing costs aid and £6180 per year without. The Tax Credits, now being phased out, vary the income threshold by whether the family receives only the Child Tax Credit (CTC) or both the CTC and the Working Tax Credit. Lowering the threshold of benefit phase-out raises revenue by shifting earlier the benefit reductions, maintaining the same phase-out rate (63\% on post-tax income for Universal Credit, 41\% on pre-tax income for the Tax Credits). This causes changes to the marginal tax rate landscape for individuals receiving the benefits, shown in Figure \ref{fig:benefit_mtr_changes}. 
+    
+    \subsection{UBI Replacement}
+
+    Table \ref{tab:small_UBI_results} shows the relative static effects of the exchange of each allowance with a UBI.
 
     \begin{table}[h]
         \centering
@@ -174,6 +186,8 @@
     The estimated results from the abolition of small allowances are mixed, but poverty is reduced slightly by exchanging the Dividend and Property Allowances for a universal basic income, but increased by exchanging the Trading and UC Work Allowances.
 
     \section{Comparison}
+
+    \subsection{Poverty efficiency}
 
     \begin{table}[h]
         \centering
@@ -188,7 +202,25 @@
         \caption{Comparisons of all UBI reforms (efficiency)}
         \label{tab:comp_UBI_2}
     \end{table}
+
     The allowances considered have significant revenue differences, but adjusting for the UBI expenditure allows for a fair comparison of their efficiency. For this, we define the \emph{poverty gap efficiency} as the reduction in the poverty gap divided by the UBI expenditure - the percentage of the reform's revenue which actually reduces poverty. Tables \ref{tab:comp_UBI_1} and \ref{tab:comp_UBI_2} show the results of each reform on this metric.
+    \subsection{Distributional impact}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/fig_13.png}
+        \caption{Distributional impacts under different funding models}
+        \label{fig:distr_comp}
+    \end{figure}
+
+    Figure \ref{fig:distr_comp} shows the distributional impact of several allowance-funded UBI schemes. Starting from the combined reform abolishing all allowances considered in this paper, retaining individual allowances reduces the size of the gains or losses in disposable income deciles.  The results suggest that abolishing all considered allowances other than the Work Allowances produces the most progressive result.
+
     \section{Conclusion}
-    The budget-neutral reforms considered in this paper would all reduce poverty and inequality, and can be combined with similar effects. The Personal Allowance provides the most significant UBI, but comes at the cost of increased risk to pension-age individuals, due to lower average incomes and the taxability of the State Pension. The National Insurance thresholds present an alternative funding method which can mitigate these effects, as well as providing additional UBI funding for increased levels of state support to individuals. Small allowances can also provide funding, though not all are equally efficient - the Property Allowance is highly efficient at reducing the poverty gap, unlike the Universal Credit Work Allowance.
+    The budget-neutral reforms considered in this paper would all reduce poverty and inequality, and can be combined with similar effects. The Personal Allowance provides the most significant UBI, but comes at the cost of increased risk to pension-age individuals, due to lower average incomes and the taxability of the State Pension. The National Insurance thresholds present an alternative funding method which can mitigate these effects, as well as providing additional UBI funding for increased levels of state support to individuals. Small allowances can also provide funding, though not all are equally efficient - the Property Allowance is highly efficient at reducing the poverty gap, unlike the Work Allowances.
+
+    Universal basic income reforms require significant amounts of funding to meet their core objectives, which can be raised through many different tax or benefit policy changes. Raising tax rates on taxed income in combination with thresholding changes is often evaluated under microsimulation modeling: raising existing Income Tax rates by 5\%, reducing the Personal Allowance and raising National Insurance levels can fund a sustainable, budget-neutral UBI scheme\cite{recovery_UBI}.
+
+    The estimated socioeconomic changes brought by the UBI reforms considered in this paper are static estimates, isolated from dynamic responses to changes in incentives provided by government taxation and spending. However, static microsimulation models can provide a level of detail on the immediate effects of a policy, and are able to estimate precise questions such as impacts on poverty levels or breakdowns of the effects of specific taxes or benefits on household budgets. UK microsimulation models such as UKMOD have facilitated in-depth analysis of a wide range of feasible basic income schemes.\cite{feasible_UBI_2}\cite{feasible_UBI_1}. The estimates produced in this paper utilised OpenFisca-UK, with full source code for both the model and reforms provided for reproducability. Microsimulation has thus far helped rapidly increase the amount of information available to the general public on the effects of policy proposals on both their individual situations and society as a whole, and the continued development of these models is critical for public understanding of universal basic income policy.
+    \bibliographystyle{abbrv}
+    \bibliography{bib}
 \end{document}
